@@ -1,0 +1,40 @@
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.form .message a {
+    color: #008A73;
+    text-decoration: none;
+}
+.smallRow{
+    margin-bottom: 0px !important;
+}
+
+.autocomplete-content{
+    position: absolute !important;
+    width: 100% !important;
+}
+
+body {
+    background: #4db6ac; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #4db6ac, #4db6ac);
+    background: -moz-linear-gradient(right, #4db6ac, #4db6ac);
+    background: -o-linear-gradient(right, #4db6ac, #4db6ac);
+    background: linear-gradient(to left, #4db6ac, #4db6ac);
+}

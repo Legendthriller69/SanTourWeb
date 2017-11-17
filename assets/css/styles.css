@@ -1,0 +1,165 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+    margin-top : 20px;
+}
+.resa-btn-book {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.resa-btn {
+    background-color : white;
+    color : black;
+    box-shadow : 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
+}
+.resa-btn:hover {
+    color : white;
+    box-shadow : 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
+}
+.resa-btn:active {
+    color : white;
+    box-shadow : 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
+}
+.resa-btn:focus {
+    color : white;
+    box-shadow : 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
+}
+.resa-table {
+    margin-bottom : 20px;
+    table-layout: auto;
+}
+.resa-table > tbody > tr:nth-child(even) {
+    background-color: rgba(38, 166, 154, 0.05) !important;
+}
+.resa-empty-table {
+    text-align : center;
+}
+h5 {
+    display : inline-block;
+}
+.resa-title {
+    margin-bottom : 20px;
+}
+.resa-btn-title {
+    float : right;
+}
+#resa-add-zone {
+    margin-right : 10px;
+}
+#resa-bike-img {
+    width: 100%;
+}
+#resa-table-zone td:first-child {
+    width: 50%;
+}
+#resa-about {
+    margin-bottom : 40px;
+}
+#resa-blockquote {
+    border-left: 5px solid #009688;
+    margin: 0;
+}
+#resa-blockquote-sign {
+    font-weight: bold;
+}
+.line-details-td {
+    text-align : center;
+}
+.line-details-td h6 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+}
+.line-details-td p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.line-details-td p.line-details-start {
+    font-weight: bold;
+}
+.line-details-td i {
+    color: #26a69a;
+}
+.zone-details-td {
+    text-align : left;
+}
+.zone-details-td h6 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+}
+.zone-details-td p.line-details-start {
+    font-weight: bold;
+}
+.zone-details-td i {
+    color: #26a69a;
+}
+.zone-details-td th {
+    font-size: 16px;
+}
+.resa-disabled {
+    color: #cccccc;
+}
+.resa-disabled a {
+    color: #cccccc !important;
+}
+[id^="div-editZone-"] {
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.resa-small {
+    font-size: 1.3rem;
+    color: black;
+    vertical-align: middle;
+}
+.resa-small:hover {
+    color: #26a69a;
+}
+.resa-bold-span span {
+    font-weight: bold;
+}
+.resa-i-warning {
+    color: red;
+}
+.resa-table-stats td {
+    width: 50%;
+}
+.chart_wrap {
+    position: relative;
+    padding-bottom: 20%;
+    height: 0;
+    overflow:hidden;
+}
+.chart_div {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 60%;
+    height: 100%;
+}
+.chart_div div {
+    width: 100% !important;
+}
+.chart_div svg {
+    width: 100%;
+}
+.resa-side-nav li > a:hover {
+    background-color: rgba(38, 166, 154, 0.25);
+}
+.resa-side-nav li > a:focus {
+    background-color: rgba(38, 166, 154, 0.25);
+}
+.resa-side-nav li > a:active {
+    background-color: rgba(38, 166, 154, 0.5);
+}
+.resa-side-nav .nav-active {
+    background-color: rgba(38, 166, 154, 0.75);
+}
+.resa-side-nav .nav-active a {
+    color: white;
+}
