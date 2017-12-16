@@ -1,6 +1,6 @@
 <?php
 
-use ResaBike\Library\Utils\Redirect;
+use SanTourWeb\Library\Utils\Redirect;
 
 function error_404()
 {

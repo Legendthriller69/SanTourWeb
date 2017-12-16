@@ -2,17 +2,20 @@
 
 namespace SanTourWeb\Library\Utils;
 
-class Redirect {
-    public static function toUrl($link) {
+class Redirect
+{
+    public static function toUrl($link)
+    {
         header(sprintf('Location: %s', $link));
         exit;
     }
 
-    public static function toLastPage() {
-        if(isset($_SERVER['HTTP_REFERER'])) $link = $_SERVER['HTTP_REFERER'];
+    public static function toLastPage()
+    {
+        if (isset($_SERVER['HTTP_REFERER'])) $link = $_SERVER['HTTP_REFERER'];
         else {
             if (isset($_SESSION['user']))
-                $link = ABSURL . DS . 'books';
+                $link = ABSURL . DS . 'tracks';
             else
                 $link = ABSURL;
         }
@@ -21,19 +24,21 @@ class Redirect {
         exit;
     }
 
-    public static function toAction($controller, $action = 'index', $param = null){
+    public static function toAction($controller, $action = 'index', $param = null)
+    {
         echo $controller;
         echo $action;
-        if(isset($param)) {
+        if (isset($param)) {
             $queryString = '&';
-            foreach($param as $key => $value) {
+            foreach ($param as $key => $value) {
                 $queryString .= sprintf('%s=%s', $key, $value);
             }
-        }
-        else
-            $queryString = '';
 
-        header(sprintf('Location: '.ABSURL.DS.'%s'.DS.'%s?%s', $controller, $action, $queryString));
-        exit;
+            header(sprintf('Location: ' . ABSURL . DS . '%s' . DS . '%s?%s', $controller, $action, $queryString));
+            exit;
+        } else {
+            header(sprintf('Location: ' . ABSURL . DS . '%s', $controller));
+            exit;
+        }
     }
 }

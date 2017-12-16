@@ -3,138 +3,180 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
+
 main {
     flex: 1 0 auto;
-    margin-top : 20px;
+    margin-top: 20px;
 }
-.resa-btn-book {
+
+.san-btn-book {
     padding-left: 5px;
     padding-right: 5px;
 }
-.resa-btn {
-    background-color : white;
-    color : black;
-    box-shadow : 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
+
+.san-btn {
+    background-color: white;
+    color: black;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
 }
-.resa-btn:hover {
-    color : white;
-    box-shadow : 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
+
+.san-btn:hover {
+    color: white;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
 }
-.resa-btn:active {
-    color : white;
-    box-shadow : 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
+
+.san-btn:active {
+    color: white;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
 }
-.resa-btn:focus {
-    color : white;
-    box-shadow : 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
+
+.san-btn:focus {
+    color: white;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
 }
-.resa-table {
-    margin-bottom : 20px;
+
+.san-table {
+    margin-bottom: 20px;
     table-layout: auto;
 }
-.resa-table > tbody > tr:nth-child(even) {
+
+.san-table > tbody > tr:nth-child(even) {
     background-color: rgba(38, 166, 154, 0.05) !important;
 }
-.resa-empty-table {
-    text-align : center;
-}
-h5 {
-    display : inline-block;
-}
-.resa-title {
-    margin-bottom : 20px;
-}
-.resa-btn-title {
-    float : right;
-}
-#resa-add-zone {
-    margin-right : 10px;
-}
-#resa-bike-img {
-    width: 100%;
-}
-#resa-table-zone td:first-child {
+
+#san-table-category td {
     width: 50%;
 }
-#resa-about {
-    margin-bottom : 40px;
+
+.resa-empty-table {
+    text-align: center;
 }
-#resa-blockquote {
+
+h5 {
+    display: inline-block;
+}
+
+.san-title {
+    margin-bottom: 20px;
+}
+
+.san-btn-title {
+    float: right;
+}
+
+#san-add-category {
+    margin-right: 10px;
+}
+
+#san-bike-img {
+    width: 100%;
+}
+
+#san-table-zone td:first-child {
+    width: 50%;
+}
+
+#rsan-about {
+    margin-bottom: 40px;
+}
+
+#san-blockquote {
     border-left: 5px solid #009688;
     margin: 0;
 }
-#resa-blockquote-sign {
+
+#san-blockquote-sign {
     font-weight: bold;
 }
+
 .line-details-td {
-    text-align : center;
+    text-align: center;
 }
+
 .line-details-td h6 {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 0.7rem;
 }
+
 .line-details-td p {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 .line-details-td p.line-details-start {
     font-weight: bold;
 }
+
 .line-details-td i {
     color: #26a69a;
 }
+
 .zone-details-td {
-    text-align : left;
+    text-align: left;
 }
+
 .zone-details-td h6 {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 0.7rem;
 }
+
 .zone-details-td p.line-details-start {
     font-weight: bold;
 }
+
 .zone-details-td i {
     color: #26a69a;
 }
+
 .zone-details-td th {
     font-size: 16px;
 }
-.resa-disabled {
+
+.san-disabled {
     color: #cccccc;
 }
-.resa-disabled a {
+
+.san-disabled a {
     color: #cccccc !important;
 }
+
 [id^="div-editZone-"] {
     display: inline-block;
     padding-right: 10px;
     padding-left: 10px;
 }
-.resa-small {
+
+.san-small {
     font-size: 1.3rem;
     color: black;
     vertical-align: middle;
 }
-.resa-small:hover {
+
+.san-small:hover {
     color: #26a69a;
 }
-.resa-bold-span span {
+
+.san-bold-span span {
     font-weight: bold;
 }
-.resa-i-warning {
+
+.san-i-warning {
     color: red;
 }
-.resa-table-stats td {
+
+.san-table-stats td {
     width: 50%;
 }
+
 .chart_wrap {
     position: relative;
     padding-bottom: 20%;
     height: 0;
-    overflow:hidden;
+    overflow: hidden;
 }
+
 .chart_div {
     position: absolute;
     top: 5%;
@@ -142,24 +184,94 @@ h5 {
     width: 60%;
     height: 100%;
 }
+
 .chart_div div {
     width: 100% !important;
 }
+
 .chart_div svg {
     width: 100%;
 }
-.resa-side-nav li > a:hover {
+
+.san-side-nav li > a:hover {
     background-color: rgba(38, 166, 154, 0.25);
 }
-.resa-side-nav li > a:focus {
+
+.san-side-nav li > a:focus {
     background-color: rgba(38, 166, 154, 0.25);
 }
-.resa-side-nav li > a:active {
+
+.san-side-nav li > a:active {
     background-color: rgba(38, 166, 154, 0.5);
 }
-.resa-side-nav .nav-active {
+
+.san-side-nav .nav-active {
     background-color: rgba(38, 166, 154, 0.75);
 }
-.resa-side-nav .nav-active a {
+
+.san-side-nav .nav-active a {
     color: white;
 }
+
+.san-form {
+    padding-bottom: 20px;
+}
+
+.san-swipe table {
+    padding-top: 20px;
+    table-layout: fixed;
+}
+
+.san-tabs li a {
+    color: black !important;
+}
+
+.san-tabs .indicator {
+    background-color: #009688;
+}
+
+.san-row-tracks-info {
+    margin-bottom: 10px;
+}
+
+.san-table-points {
+    cursor: pointer;
+}
+
+#san-map {
+    width: 100%;
+    height: 400px;
+}
+
+#san-map-legend {
+    width: 100%;
+    text-align: center;
+}
+
+#san-map-legend ul li {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+}
+
+#legend {
+    background: #fff;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid #000;
+}
+
+#legend h3 {
+    margin-top: 0;
+}
+
+#legend img {
+    vertical-align: middle;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+

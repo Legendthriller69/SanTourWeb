@@ -50,7 +50,6 @@ class View {
         $html = $this->RenderPartial();
         ob_start();
         include($this->layoutPath);
-        unset($html);
         return ob_get_clean();
     }
 }

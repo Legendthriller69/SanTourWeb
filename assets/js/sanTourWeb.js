@@ -12,10 +12,8 @@ $(document).ready(function () {
     $('.dropdown-button').dropdown();
 
     // Cache les détails de la ligne
-    $('[id^="staggered-line-"]').hide();
-
-    // Cacher les détails de la zone
-    $('[id^="staggered-zone-"]').hide();
+    $('[id^="staggered-pod-"]').hide();
+    $('[id^="staggered-poi-"]').hide();
 
     // Initialisation des tooltips
     $('.tooltipped').tooltip({delay: 50});
@@ -54,7 +52,7 @@ $(document).ready(function () {
         $('#rowPass').toggle();
 
         if ($('#rowPass').is(':visible')) {
-            $('#btnChangePass').html(__("Cancel password change"));
+            $('#btnChangePass').html('Cancel password change');
             $('#changePass').val('true');
             $('#password').attr('required', 'required');
             $('#passwordConf').attr('required', 'required');
@@ -63,15 +61,6 @@ $(document).ready(function () {
             $('#changePass').val('false');
             $('#password').removeAttr('required');
             $('#passwordConf').removeAttr('required');
-        }
-    });
-
-    // Cache le select des zones lorsque le role choisi est "Administrateur système"
-    $('#select-add-role').change(function () {
-        if ($('#select-add-role option:selected').val() == 3) {
-            $('#select-add-zone').hide();
-        } else {
-            $('#select-add-zone').show();
         }
     });
 

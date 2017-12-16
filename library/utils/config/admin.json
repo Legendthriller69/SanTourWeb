@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "santour-e9abc",
+  "private_key_id": "b92551dd094e3d6ca6a03eb28fd65dc00cb9d3ff",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCfMbqtURHSGI6n\nBiDKCD4UcWU0q59vEUPQxm71t8IdqisvVv+mWNNZyXwSeLWCFh2rp7rJ1n+Q/lgH\nGmoMSRsQnvIpjO5BRFNaHG+qEYJT8PMpNH0uRuSstsBpVJXjzYWvWWxv0XXpzItg\niVUuafFgeEWljlUSI9lwk9hK33y98Y3n53HFGvAkK+5OhIgstBBuDKioY+JYL3rj\nPOwmNzPlnZvPZhh1XmMfOrQg39XHwsk7icXkp5W8Z32JeYKkz0AFHo8xyGnpK0aH\n3/diGhRem9aMLYCYrOYifwXZK/F+aGqh0Hp6s5fotZRmvhesOfbW5VAMG/b14UjC\ni4WEDrdxAgMBAAECggEAMzgu1eDFmRFppHemSRqJzs4FQAMQEw49AYk23jw3ao/7\nwQl+y6i8p6DaGJ9Z1vcCqN4YjSREewQ6kl5/TGChIqHhTFkZt0oif1Wy38cuZY+a\nzOEkfaU1ohRSqBEdAOR5ZMeiyf9crtKu7WqCS6KulNldnzzCRknehggriTuKyRnS\nxliC3HvI1Ym5h5Q6fXbqPMNHSltiCGpuABptABf/OVrWiCVv19jUY3WJVE4AxvwQ\nS5c9+kYjezOqP33RE13JMDClGdRalzbLuQDFipz8/0890y5Lyk9z567t9HWNb9pS\nN4lvBQ/bxb+OIws5y/MI28UkwhtnbGCc0kwFRfIvmQKBgQDZqxkA5Tl9ynichg/v\nVgbe72FZ8lsIAVLDswOuT8Aza+5179WxFIiR8q9j1MNX0XJXZiWwQEIsW6W41RgU\noP5tLiAYu0uCHDH15iqTzKg7+c25JZ6BRTIFvtP8vE9y9/dXHdTNLNvZNCYhsN37\nvetxZ40FRWyzNaE4T4sv9d21owKBgQC7OoIiPSmSMRIZ/hikYENH71EmSWpKNOk3\nK3WRVegKY9q12ckTtn4DJFBMzX3GYcYlWdoruE45y1CGrPMcqFAA4Luf1TFDccF0\nw9ekw0giZnQQsj4alj0y6Iz6vtlpaE+wNLVNaQ06G9Z5EJ+Iy4BQFCS8bDWxXEIv\nvK97Yu2n2wKBgH+jQxAxWlsXBU7TljiEO5cyy+VQpmy1SfET4g6vGUeN/NEPiEFE\nhyj+JDboJnwyh1gUv/jwVV1piG4wFuTR2x/uskeOXKK5IdrN0x3EHsq8mxP8qUuo\nZcLUub40Nmp2WYWuKoD90xU07T9IVYMvRQbE7/6tTSZxRk6c5kODazT9AoGBALPo\nyemauhqXepxtdUJmmeBCz8ipnTBHXZ687RFF6l4pi51Y9AY0QyxDtcHHaEe75ko3\n6BRA2zJf8zYmdMoh1hax3Lj+hIMZiVrpYYsad3NO3dK5ZEHqAk6r9eRwhbvrFz/r\nthf3jVU8MMBOv+4UFm1cndxNYt7WF2eFuV4oNtQnAoGBAM/X1h8zfck9Mvyb+16H\nuEiNKWx90ZzH9t+ub+eLEe0JDQ/sCptveBDpEalCLhAR8a7H6oi7jAfInDFakQGI\nH9kWXVQzWadhU56O6ZH0MsGTXLZ5NFqgzTiNbXRf0jgUW75TkQ6nqzCFfhYNhLBL\n8Vj8elrm/e+DG02Xv+TAWCM8\n-----END PRIVATE KEY-----\n",
+  "client_email": "adminfirebase@santour-e9abc.iam.gserviceaccount.com",
+  "client_id": "116719835529886856041",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/adminfirebase%40santour-e9abc.iam.gserviceaccount.com"
+}

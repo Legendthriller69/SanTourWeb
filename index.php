@@ -18,6 +18,9 @@ define('DEBUG_LEVEL', 2);
 
 require LIBPATH.DS.'autoload.php';
 require LIBPATH.DS.'function.php';
+require __DIR__.DS.'vendor/autoload.php';
+
+define('FIREBASE_URL', 'https://santour-e9abc.firebaseio.com/');
 
 $_SESSION['lang'] = (isset($_SESSION['lang'])) ? $_SESSION['lang'] : 'fr';
 
