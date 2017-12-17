@@ -26,7 +26,7 @@
                               <span>' . __("Distance", true) . ' :</span> ' . round_distance($track->getDistance()) . '
                           </div>
                           <div class="col s12 m6 l3 san-row-tracks-info">
-                               <span>' . __("Duration", true) . ' :</span> ' . $track->getDuration() . ' ' . __('seconds', true) . '
+                               <span>' . __("Duration", true) . ' :</span> ' . '10' . ' ' . __('minutes', true) . '
                           </div>
                          <div class="col s12 m6 l3 san-row-tracks-info">
                               <span>' . __("Description", true) . ' :</span> ' . $track->getDescription() . '
@@ -40,7 +40,7 @@
                                 <li class="tab col s6"><a href="#swipe-poi">' . __('Points of interest', true) . '</a></li>
                             </ul>
                             <div id="swipe-pod" class="col s12 san-swipe">
-                                <table class="san-table-points striped bordered">
+                                <table class="san-table-points bordered">
                                     <thead>
                                         <tr>
                                             <th>' . __("Name", true) . '</th>
@@ -73,7 +73,7 @@
                                             <tbody>
                                             <tr>
                                                 <td colspan="3" class="center-align">
-                                                    <img src="' . ABSURL . '/assets/img/benfica36.jpg" width="200" />
+                                                    <img src="https://firebasestorage.googleapis.com/v0/b/santour-e9abc.appspot.com/o/POD_20171215_144122?alt=media&token=a5acf448-61c0-4e81-a16b-c02e185ab208" width="200" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -96,12 +96,15 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>';
+                            $indexCat = 0;
                             foreach ($pod->getPodCategories() as $category) {
+
                                 $html .= '
                                                             <tr>
-                                                                <td>Category 3</td>
+                                                                <td>' . $categories[$indexCat]->getName() . '</td>
                                                                 <td>' . $category->getValue() . '</td>
                                                             </tr>';
+                                $indexCat++;
                             }
                             $html .= '
                                                         </tbody>
@@ -123,7 +126,7 @@
                                     </table>
                                 </div>
                                 <div id="swipe-poi" class="col s12 san-swipe">
-                                <table class="san-table-points striped bordered">
+                                <table class="san-table-points bordered">
                                     <thead>
                                         <tr>
                                             <th>' . __("Name", true) . '</th>

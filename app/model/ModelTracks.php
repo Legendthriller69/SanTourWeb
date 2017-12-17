@@ -95,6 +95,23 @@ class ModelTracks extends Model
         return $track;
     }
 
+    public function getTracksCategories($id)
+    {
+        $firebase = FirebaseLib::getInstance();
+        $pods = $this->getTrackById($id)->getPods();
+
+        $categories = array();
+        foreach ($pods as $pod)
+        {
+            foreach ($pod->getPodCategories() as $podCategory) {
+                $tempCategory = json_decode($firebase->get('categories/' . $podCategory->getIdCategory()));
+                array_push($categories, new Category($podCategory->getIdCategory(), $tempCategory->name));
+            }
+        }
+
+        return $categories;
+    }
+
     public function getCategoryById($id)
     {
         $firebase = FirebaseLib::getInstance();

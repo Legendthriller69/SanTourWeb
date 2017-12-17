@@ -27,8 +27,10 @@ class ControllerTracks extends Controller
             Redirect::toLastPage();
         $track = $this->model->getTrackById($_GET['id']);
         $user = $this->model->getUserById($track->getIdUser());
+        $categories = $this->model->getTracksCategories($_GET['id']);
         $this->view->Set('track', $track);
         $this->view->Set('user', $user);
+        $this->view->Set('categories', $categories);
         return $this->view->Render();
     }
 
