@@ -10,7 +10,7 @@ function error_404()
 function redirectIfNotConnected()
 {
     if (!isset($_SESSION['connected']))
-        Redirect::toAction('login');
+        Redirect::toAction('index');
 }
 
 function __($key, $return = false)

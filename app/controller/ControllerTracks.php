@@ -10,6 +10,8 @@ class ControllerTracks extends Controller
 {
     public function index()
     {
+        redirectIfNotConnected();
+
         $tracks = $this->model->getTracks();
         $users = $this->model->getTracksUsers();
         $this->view->Set('tracks', $tracks);
@@ -19,6 +21,8 @@ class ControllerTracks extends Controller
 
     public function details()
     {
+        redirectIfNotConnected();
+
         if (!isset($_GET['id']) || empty($_GET['id']))
             Redirect::toLastPage();
         $track = $this->model->getTrackById($_GET['id']);
@@ -30,6 +34,8 @@ class ControllerTracks extends Controller
 
     public function delete()
     {
+        redirectIfNotConnected();
+
         if (isset($_GET['id']) && !empty($_GET['id'])) {
             $this->model->deleteTrack($_GET['id']);
             Toast::message(__('Track successfully deleted !', true), 'green');

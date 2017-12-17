@@ -24,14 +24,14 @@
             <div class="nav-wrapper container">
                 <span class="brand-logo">SanTour</span>
                 <?php
-                if(isset($_SESSION['connected']) && $_SESSION['connected'])
+                if (isset($_SESSION['connected']) && $_SESSION['connected'])
                     echo '<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>';
                 ?>
                 <ul class="right hide-on-med-and-down">
                     <?php
                     $ctr = $this->currentController;
 
-//                    if(isset($_SESSION['connected']) && $_SESSION['connected']) {
+                    if (isset($_SESSION['connected']) && $_SESSION['connected']) {
                         echo '<li ';
                         if ($ctr == 'tracks') {
                             echo 'class="active"';
@@ -48,7 +48,7 @@
                         }
                         echo '><a href="' . ABSURL . DS . 'users">' . __("Users", true) . '</a></li>';
                         echo '<li><a href="' . ABSURL . DS . 'index' . DS . 'logout">' . __("Logout", true) . '</a></li>';
-//                    }
+                    }
                     ?>
                 </ul>
             </div>
@@ -56,24 +56,24 @@
     </div>
     <ul class="side-nav san-side-nav show-on-medium-and-down" id="mobile-demo">
         <?php
-        //                    if(isset($_SESSION['connected']) && $_SESSION['connected']) {
-        echo '<li ';
-        if ($ctr == 'tracks') {
-            echo 'class="active"';
+        if (isset($_SESSION['connected']) && $_SESSION['connected']) {
+            echo '<li ';
+            if ($ctr == 'tracks') {
+                echo 'class="active"';
+            }
+            echo '><a href="' . ABSURL . DS . 'tracks">' . __("Tracks", true) . '</a></li>';
+            echo '<li ';
+            if ($ctr == 'categories') {
+                echo 'class="active"';
+            }
+            echo '><a href="' . ABSURL . DS . 'categories">' . __("Categories", true) . '</a></li>';
+            echo '<li ';
+            if ($ctr == 'users') {
+                echo 'class="active"';
+            }
+            echo '><a href="' . ABSURL . DS . 'users">' . __("Users", true) . '</a></li>';
+            echo '<li><a href="' . ABSURL . DS . 'index' . DS . 'logout">' . __("Logout", true) . '</a></li>';
         }
-        echo '><a href="' . ABSURL . DS . 'tracks">' . __("Tracks", true) . '</a></li>';
-        echo '<li ';
-        if ($ctr == 'categories') {
-            echo 'class="active"';
-        }
-        echo '><a href="' . ABSURL . DS . 'categories">' . __("Categories", true) . '</a></li>';
-        echo '<li ';
-        if ($ctr == 'users') {
-            echo 'class="active"';
-        }
-        echo '><a href="' . ABSURL . DS . 'users">' . __("Users", true) . '</a></li>';
-        echo '<li><a href="' . ABSURL . DS . 'index' . DS . 'logout">' . __("Logout", true) . '</a></li>';
-        //                    }
         ?>
     </ul>
 </header>
@@ -92,7 +92,12 @@
                     the company that manages the reservation of places for bicycles in the bus of Val d\'Anniviers.') ?>
                 </p>
             </div>
-            <div class="col l3 s12">
+            <?php
+            if (isset($_SESSION['connected']) && $_SESSION['connected'])
+                echo '<div class="col l3 s12">';
+            else
+                echo '<div class="col l3 offset-l3 s12">';
+            ?>
                 <h5 class="white-text"><?php __("Languages"); ?></h5>
                 <ul>
                     <?php
@@ -111,30 +116,31 @@
                     ?>
                 </ul>
             </div>
-            <div class="col l3 s12">
-                <h5 class="white-text"><?php __("Navigation"); ?></h5>
-                <ul>
-                    <?php
-//                    if(isset($_SESSION['connected']) && $_SESSION['connected']) {
-                        if ($ctr == 'tracks')
-                            echo '<li class="san-disabled">' . __("Tracks", true) . '</li>';
-                        else
-                            echo '<li><a class="white-text" href="' . ABSURL . DS . 'tracks">' . __("Tracks", true) . '</a></li>';
+            <?php
+            if (isset($_SESSION['connected']) && $_SESSION['connected']) {
+                echo '
+                            <div class="col l3 s12">
+                                <h5 class="white-text">' . __("Navigation", true) . '</h5>
+                                <ul>';
+                if ($ctr == 'tracks')
+                    echo '<li class="san-disabled">' . __("Tracks", true) . '</li>';
+                else
+                    echo '<li><a class="white-text" href="' . ABSURL . DS . 'tracks">' . __("Tracks", true) . '</a></li>';
 
-                        if ($ctr == 'categories')
-                            echo '<li class="san-disabled">' . __("Categories", true) . '</li>';
-                        else
-                            echo '<li><a class="white-text" href="' . ABSURL . DS . 'categories">' . __("Categories", true) . '</a></li>';
+                if ($ctr == 'categories')
+                    echo '<li class="san-disabled">' . __("Categories", true) . '</li>';
+                else
+                    echo '<li><a class="white-text" href="' . ABSURL . DS . 'categories">' . __("Categories", true) . '</a></li>';
 
-                        if ($ctr == 'users')
-                            echo '<li class="san-disabled">' . __("Users", true) . '</li>';
-                        else
-                            echo '<li><a class="white-text" href="' . ABSURL . DS . 'users">' . __("Users", true) . '</a></li>';
-                        echo '<li><a class="white-text" href="' . ABSURL . DS . 'login' . DS . 'logout">' . __("Logout", true) . '</a></li>';
-//                    }
-                    ?>
+                if ($ctr == 'users')
+                    echo '<li class="san-disabled">' . __("Users", true) . '</li>';
+                else
+                    echo '<li><a class="white-text" href="' . ABSURL . DS . 'users">' . __("Users", true) . '</a></li>';
+                echo '<li><a class="white-text" href="' . ABSURL . DS . 'login' . DS . 'logout">' . __("Logout", true) . '</a></li>
                 </ul>
-            </div>
+            </div>';
+            }
+            ?>
         </div>
     </div>
 </footer>

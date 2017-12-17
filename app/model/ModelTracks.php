@@ -26,7 +26,27 @@ class ModelTracks extends Model
             array_push($tracks, $tempTrack);
         }
 
-        usort($tracks, function($a, $b) {
+        return $this->compareTracks($tracks);
+    }
+
+    public function getTracksUsers()
+    {
+        $firebase = FirebaseLib::getInstance();
+        $tracksDB = json_decode($firebase->get('tracks'));
+
+        $users = array();
+        foreach ($tracksDB as $trackDB) {
+            $tempUser = json_decode($firebase->get('users/' . $trackDB->idUser));
+            $user = new User($trackDB->idUser, $tempUser->idRole, $tempUser->username, $tempUser->mail);
+            array_push($users, $user);
+        }
+
+        return $users;
+    }
+
+    private function compareTracks($tracks)
+    {
+        usort($tracks, function ($a, $b) {
             return strcmp($b->getDistance(), $a->getDistance());
         });
 
@@ -72,81 +92,23 @@ class ModelTracks extends Model
 
         $track->setPositions($positions);
 
-//        echo 'Track :<br />';
-//        echo 'Id : ' . $track->getId() . '<br />';
-//        echo 'idType : ' . $track->getIdType() . '<br />';
-//        echo 'idUser : ' . $this->getUserById($track->getIdUser())->getUsername() . '<br />';
-//        echo 'name : ' . $track->getName() . '<br />';
-//        echo 'description : ' . $track->getDescription() . '<br />';
-//        echo 'distance : ' . $track->getDistance() . '<br />';
-//        echo 'duration : ' . $track->getDuration() . '<br />';
-//        echo '<br />';
-//        $i = 1;
-//        foreach ($pods as $pod) {
-//            echo 'POD ' . $i . ' : <br />';
-//            echo 'Nom : ' . $pod->getName() . ', Description : ' . $pod->getDescription() . ', Picture : ' . $pod->getPicture() . '<br />';
-//            echo 'Latitude : ' . $pod->getPosition()->getLatitude() . ', Longitude : ' . $pod->getPosition()->getLongitude() . ', Altitude : ' . $pod->getPosition()->getAltitude() . ', DateTime : ' . $pod->getPosition()->getDateTime() . '<br />';
-//            foreach ($pod->getPodCategories() as $podCategory) {
-//                $category = $this->getCategoryById($podCategory->getIdCategory());
-//                echo 'Category : ' . $category->getName() . ', Value : ' . $podCategory->getValue() . '<br />';
-//            }
-//            echo '<br />';
-//            $i++;
-//        }
-//        $i = 1;
-//        foreach ($pois as $poi) {
-//            echo 'POI ' . $i . ' : <br />';
-//            echo 'Nom : ' . $poi->getName() . ', Description : ' . $poi->getDescription() . '<br />';
-//            echo 'Latitude : ' . $poi->getPosition()->getLatitude() . ', Longitude : ' . $poi->getPosition()->getLongitude() . ', Altitude : ' . $poi->getPosition()->getAltitude() . ', DateTime : ' . $poi->getPosition()->getDateTime() . '<br />';
-//            echo '<br />';
-//            $i++;
-//        }
-//        $i = 1;
-//        foreach ($positions as $position) {
-//            echo 'Position ' . $i . ' : <br />';
-//            echo 'Latitude : ' . $position->getLatitude() . ', Longitude : ' . $position->getLongitude() . ', Altitude : ' . $position->getAltitude() . ', DateTime : ' . $position->getDateTime() . '<br />';
-//            echo '<br />';
-//            $i++;
-//        }
-
         return $track;
     }
 
     public function getCategoryById($id)
     {
         $firebase = FirebaseLib::getInstance();
-        $categoriesDB = json_decode($firebase->get('categories'));
+        $categoryDB = json_decode($firebase->get('categories/' . $id));
 
-        foreach ($categoriesDB as $key => $categoryDB) {
-            if ($key == $id)
-                return new Category($key, $categoryDB->name);
-        }
+        return new Category($id, $categoryDB->name);
     }
 
     public function getUserById($id)
     {
         $firebase = FirebaseLib::getInstance();
-        $usersDB = json_decode($firebase->get('users'));
+        $userDB = json_decode($firebase->get('users/' . $id));
 
-        foreach ($usersDB as $key => $userDB) {
-            if ($key == $id)
-                return new User($key, $userDB->idRole, $userDB->username, $userDB->mail);
-        }
-    }
-
-    public function getTracksUsers()
-    {
-        $firebase = FirebaseLib::getInstance();
-        $tracksDB = json_decode($firebase->get('tracks'));
-
-        $users = array();
-        foreach ($tracksDB as $trackDB) {
-            $tempUser = json_decode($firebase->get('users/' . $trackDB->idUser));
-            $user = new User($trackDB->idUser, $tempUser->idRole, $tempUser->username, $tempUser->mail);
-            array_push($users, $user);
-        }
-
-        return $users;
+        return new User($id, $userDB->idRole, $userDB->username, $userDB->mail);
     }
 
     public function deleteTrack($id)

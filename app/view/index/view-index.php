@@ -3,8 +3,8 @@
         <form class="login-form col s12 san-form" method="POST">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="login" name="pseudo" type="text" class="validate">
-                    <label class=active for="login"><?php __('Username') ?></label>
+                    <input id="email" name="email" type="text" class="validate">
+                    <label class="active" for="email"><?php __('Email') ?></label>
                 </div>
             </div>
             <div class="row">

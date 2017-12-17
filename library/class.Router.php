@@ -18,8 +18,8 @@ class Router
             $params = explode('/', $url);
         }
 
-        $ctr = isset($params[0]) ? $params[0] : DEFAULT_CONTROLLER;
-        $action = isset($params[1]) ? $params[1] : DEFAULT_ACTION;
+        $ctr = isset($params[0]) && !empty($params[0]) ? $params[0] : DEFAULT_CONTROLLER;
+        $action = isset($params[1]) && !empty($params[1]) ? $params[1] : DEFAULT_ACTION;
 
         $controllerClassName = 'SanTourWeb\\App\\Controller\\Controller' . ucfirst($ctr);
 
