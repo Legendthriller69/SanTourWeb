@@ -3,6 +3,7 @@
 namespace SanTourWeb\App\Controller;
 
 use SanTourWeb\Library\Mvc\Controller;
+use SanTourWeb\Library\Utils\Firebase\FirebaseLib;
 use SanTourWeb\Library\Utils\Toast;
 use SanTourWeb\Library\Utils\Redirect;
 
@@ -55,5 +56,20 @@ class ControllerTracks extends Controller
             Toast::message(__('Suppression failed !', true), 'red');
 
         return $this->view->Render();
+    }
+
+    public function export()
+    {
+        redirectIfNotConnected();
+
+        if (!isset($_GET['id']) || empty($_GET['id']))
+            Redirect::toLastPage();
+
+        $firebase = FirebaseLib::getInstance();
+        $trackJSON = $firebase->get('tracks/' . $_GET['id']);
+
+        header('Content-disposition: attachment; filename="essai.json"');
+        header('Content-type: application/json');
+        echo $trackJSON;
     }
 }

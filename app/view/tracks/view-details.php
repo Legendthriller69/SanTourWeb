@@ -3,7 +3,7 @@
         <h5><?php __("Details about the track : ");
             echo '"' . $track->getName() . '"'; ?></h5>
         <a class="waves-effect waves-light btn btn-large san-btn san-btn-title"
-           href="<?php echo ABSURL; ?>/tracks/export"><?php __("Export the track"); ?></a>
+           href="<?php echo ABSURL; ?>/tracks/export?id=<?php echo $track->getId() . '">'; __("Export the track"); ?></a>
     </div>
     <div class="row">
         <form class="col s12" method="post">
