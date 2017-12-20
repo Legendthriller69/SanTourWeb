@@ -9,6 +9,7 @@ use SanTourWeb\Library\Entity\PodCategory;
 use SanTourWeb\Library\Entity\Poi;
 use SanTourWeb\Library\Entity\Position;
 use SanTourWeb\Library\Entity\User;
+use SanTourWeb\Library\Entity\Type;
 use SanTourWeb\Library\Utils\Firebase\FirebaseLib;
 use SanTourWeb\Library\Mvc\Model;
 
@@ -42,6 +43,39 @@ class ModelTracks extends Model
         }
 
         return $users;
+    }
+
+    public function getTracksTypes()
+    {
+        $firebase = FirebaseLib::getInstance();
+        $tracksDB = json_decode($firebase->get('tracks'));
+
+        $types = array();
+        foreach ($tracksDB as $trackDB) {
+            $tempType = json_decode($firebase->get('types/' . $trackDB->idType));
+            $type = new Type($trackDB->idType, $tempType->name);
+            array_push($types, $type);
+        }
+
+        return $types;
+    }
+
+    public function getTracksCategories($id)
+    {
+        $firebase = FirebaseLib::getInstance();
+        $pods = $this->getTrackById($id)->getPods();
+
+        $categories = array();
+        if (isset($pods)) {
+            foreach ($pods as $pod) {
+                foreach ($pod->getPodCategories() as $podCategory) {
+                    $tempCategory = json_decode($firebase->get('categories/' . $podCategory->getIdCategory()));
+                    array_push($categories, new Category($podCategory->getIdCategory(), $tempCategory->name));
+                }
+            }
+        }
+
+        return $categories;
     }
 
     private function compareTracks($tracks)
@@ -95,23 +129,6 @@ class ModelTracks extends Model
         return $track;
     }
 
-    public function getTracksCategories($id)
-    {
-        $firebase = FirebaseLib::getInstance();
-        $pods = $this->getTrackById($id)->getPods();
-
-        $categories = array();
-        foreach ($pods as $pod)
-        {
-            foreach ($pod->getPodCategories() as $podCategory) {
-                $tempCategory = json_decode($firebase->get('categories/' . $podCategory->getIdCategory()));
-                array_push($categories, new Category($podCategory->getIdCategory(), $tempCategory->name));
-            }
-        }
-
-        return $categories;
-    }
-
     public function getCategoryById($id)
     {
         $firebase = FirebaseLib::getInstance();
@@ -126,6 +143,14 @@ class ModelTracks extends Model
         $userDB = json_decode($firebase->get('users/' . $id));
 
         return new User($id, $userDB->idRole, $userDB->username, $userDB->mail);
+    }
+
+    public function getTypeById($id)
+    {
+        $firebase = FirebaseLib::getInstance();
+        $typeDB = json_decode($firebase->get('types/' . $id));
+
+        return new Type($id, $typeDB->name);
     }
 
     public function deleteTrack($id)

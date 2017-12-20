@@ -14,8 +14,12 @@ class ControllerTracks extends Controller
 
         $tracks = $this->model->getTracks();
         $users = $this->model->getTracksUsers();
+        $types = $this->model->getTracksTypes();
+
         $this->view->Set('tracks', $tracks);
         $this->view->Set('users', $users);
+        $this->view->Set('types', $types);
+
         return $this->view->Render();
     }
 
@@ -25,12 +29,17 @@ class ControllerTracks extends Controller
 
         if (!isset($_GET['id']) || empty($_GET['id']))
             Redirect::toLastPage();
+
         $track = $this->model->getTrackById($_GET['id']);
         $user = $this->model->getUserById($track->getIdUser());
+        $type = $this->model->getTypeById($track->getIdType());
         $categories = $this->model->getTracksCategories($_GET['id']);
+
         $this->view->Set('track', $track);
         $this->view->Set('user', $user);
+        $this->view->Set('type', $type);
         $this->view->Set('categories', $categories);
+
         return $this->view->Render();
     }
 

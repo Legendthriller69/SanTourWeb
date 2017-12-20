@@ -6,6 +6,7 @@
         <thead>
         <tr>
             <th><?php __('Name') ?></th>
+            <th><?php __('Type') ?></th>
             <th><?php __('Tracker') ?></th>
             <th><?php __('Distance') ?></th>
             <th><?php __('Duration') ?></th>
@@ -43,6 +44,7 @@
             $html .= '
             <tr>
                 <td>' . $track->getName() . '</td>
+                <td>' . $types[$i]->getName() . '</td>
                 <td>' . $users[$i]->getUsername() . '</td>
                 <td>' . round_distance($track->getDistance()) . '</td>
                 <td>' . $track->getDuration() . ' ' . __('seconds', true) . '</td>

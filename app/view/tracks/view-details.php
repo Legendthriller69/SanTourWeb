@@ -19,6 +19,9 @@
                     <?php
                     $html = '
                     <div class="row">
+                          <div class="col s12 m6 l3 san-row-tracks-info">
+                               <span>' . __("Type", true) . ' :</span> ' . $type->getName() . '
+                          </div>
                          <div class="col s12 m6 l3 san-row-tracks-info">
                               <span>' . __("Tracker", true) . ' :</span> ' . $user->getUsername() . '
                          </div>
@@ -73,7 +76,7 @@
                                             <tbody>
                                             <tr>
                                                 <td colspan="3" class="center-align">
-                                                    <img src="https://firebasestorage.googleapis.com/v0/b/santour-e9abc.appspot.com/o/POD_20171215_144122?alt=media&token=a5acf448-61c0-4e81-a16b-c02e185ab208" width="200" />
+                                                    <img src="https://firebasestorage.googleapis.com/v0/b/santour-e9abc.appspot.com/o/' . $pod->getPicture() . '?alt=media" width="300" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -159,7 +162,7 @@
                                             <tbody>
                                             <tr>
                                                 <td colspan="3" class="center-align">
-                                                    <img src="https://firebasestorage.googleapis.com/v0/b/santour-e9abc.appspot.com/o/POD_20171215_144122?alt=media&token=a5acf448-61c0-4e81-a16b-c02e185ab208" width="200" />
+                                                    <img src="https://firebasestorage.googleapis.com/v0/b/santour-e9abc.appspot.com/o/' . $poi->getPicture() . '?alt=media" width="300" />
                                                 </td>
                                             </tr>
                                             <tr>
