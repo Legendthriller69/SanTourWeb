@@ -23,7 +23,7 @@
     text-decoration: none;
 }
 .smallRow{
-    margin-bottom: 0px !important;
+    margin-bottom: 0 !important;
 }
 
 .autocomplete-content{
@@ -32,9 +32,25 @@
 }
 
 body {
-    background: #4db6ac; /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #4db6ac, #4db6ac);
-    background: -moz-linear-gradient(right, #4db6ac, #4db6ac);
-    background: -o-linear-gradient(right, #4db6ac, #4db6ac);
-    background: linear-gradient(to left, #4db6ac, #4db6ac);
+    background: rgba(251, 72, 76, 0.9);
+}
+
+#san-login-logo {
+    width: 75%;
+}
+
+.san-lang-disabled {
+    color: #fb484c;
+}
+
+.san-lang-text:hover a {
+    color: rgba(251, 72, 76, 0.5) !important;
+}
+
+.san-lang-text:focus a {
+    color: rgba(251, 72, 76, 0.5) !important;
+}
+
+.san-lang-text:active a {
+    color: rgba(251, 72, 76, 0.5) !important;
 }

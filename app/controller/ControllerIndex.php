@@ -17,16 +17,17 @@ class ControllerIndex extends Controller
             Redirect::toAction('tracks');
         else {
             if (isset($_POST['submit'])) {
-                $UID = $this->model->connectUser($_POST['email'], $_POST['password']);
-                if ($UID != null) {
+                if ($UID = $this->model->connectUser($_POST['email'], $_POST['password'])) {
                     $_SESSION['connected'] = true;
                     $_SESSION['user'] = $this->model->getUserById($UID);
                     Redirect::toAction('tracks');
-                } else
-                    Toast::message(__('The combination username/password does not match', true), 'red');
+                } else {
+                    Toast::message(__('The e-mail address or the password are incorrect !', true), 'red');
+                    Redirect::toAction('index');
+                }
             }
 
-            return $this->view->Render();
+            return $this->view->RenderPartial();
         }
     }
 

@@ -6,6 +6,9 @@ use Kreait\Firebase;
 use SanTourWeb\Library\Entity\User;
 use SanTourWeb\Library\Entity\Role;
 use SanTourWeb\Library\Mvc\Model;
+use Kreait\Firebase\Exception\AuthException;
+use SanTourWeb\Library\Utils\Redirect;
+use SanTourWeb\Library\Utils\Toast;
 
 class ModelIndex extends Model
 {
@@ -29,14 +32,15 @@ class ModelIndex extends Model
     {
         $firebase = Firebase::getInstance();
         $auth = $firebase->getAuth();
-        $firebaseUser = $auth->getUserByEmailAndPassword($mail, $password);
-        if ($firebaseUser != null) {
+        try {
+            $firebaseUser = $auth->getUserByEmailAndPassword($mail, $password);
             $user = $this->getUserById($firebaseUser->getUid());
             $role = $this->getRoleById($user->getIdRole());
             if ($role->getName() == 'admin')
                 return $user;
+        } catch (AuthException $e) {
+            return false;
         }
-        return null;
     }
 
     public function getUserById($id)

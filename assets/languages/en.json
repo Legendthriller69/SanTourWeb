@@ -66,5 +66,6 @@
   "The password and its confirmation have to match !": "The password and its confirmation have to match !",
   "The length of the password must be at least of 6 characters !": "The length of the password must be at least of 6 characters !",
   "Edit the user": "Edit the user",
-  "Change the password": "Change the password"
+  "Change the password": "Change the password",
+  "The e-mail address or the password are incorrect !": "The e-mail address or the password are incorrect !"
 }

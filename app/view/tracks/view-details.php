@@ -3,9 +3,10 @@
         <h5><?php __("Details about the track : ");
             echo '"' . $track->getName() . '"'; ?></h5>
         <a class="waves-effect waves-light btn btn-large san-btn san-btn-title"
-           href="<?php echo ABSURL; ?>/tracks/export?id=<?php echo $track->getId() . '">'; __("Export the track"); ?></a>
+           href="<?php echo ABSURL; ?>/tracks/export?id=<?php echo $track->getId() . '">';
+           __("Export the track"); ?></a>
     </div>
-    <div class="row">
+    <div class=" row">
         <form class="col s12" method="post">
             <div class="row">
                 <div class="col s12 san-bold-span">
@@ -217,7 +218,7 @@
         new google.maps.Marker({
             position: latLngCenter,
             map: map,
-            title: 'Départ',
+            title: __('Start'),
             icon: pinSymbol("#0F0")
         });
 
@@ -258,34 +259,26 @@
                 lat: <?php echo $track->getPositions()[count($track->getPositions()) - 1]->getLatitude(); ?>,
                 lng: <?php echo $track->getPositions()[count($track->getPositions()) - 1]->getLongitude(); ?>},
             map: map,
-            title: 'Arrivée',
+            title: __('End'),
             icon: pinSymbol("#CCC")
         });
 
         // Légende des marqueurs
         var types = [
-            {name: 'Départ', icon: pinSymbol('#0F0')},
-            {name: 'Arrivée', icon: pinSymbol('#CCC')},
-            {name: 'POD', icon: pinSymbol('#F30')},
-            {name: 'POI', icon: pinSymbol('#06F')}
+            {name: __('Start'), icon: ABSURL + '/assets/img/green_square.png'},
+            {name: __('End'), icon: ABSURL + '/assets/img/grey_square.png'},
+            {name: __('POD'), icon: ABSURL + '/assets/img/red_square.png'},
+            {name: __('POI'), icon: ABSURL + '/assets/img/blue_square.png'}
         ];
 
         var legend = document.getElementById('legend');
-        console.log(types);
         for (var key in types) {
             var type = types[key];
             var name = type.name;
             var icon = type.icon;
-            var div = document.createElement('div');
-            div.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">' +
-                '<symbol id="shape-icon-2" viewBox="0 26 100 48">' +
-                '<path d="M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0"/>' +
-                '</symbol>' +
-                '</svg>' +
-                '<svg class="icon">' +
-                '  <use xlink:href="#shape-icon-2" />' +
-                '</svg>' + name;
-            legend.appendChild(div);
+            var html = legend.innerHTML;
+            div = '<div><img src="' + icon + '" /> ' + name + '</div>';
+            legend.innerHTML = html + div;
         }
 
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);

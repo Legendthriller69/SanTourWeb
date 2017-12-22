@@ -21,14 +21,17 @@
 <body>
 <header>
     <div class="navbar-fixed">
-        <nav class="teal lighten-2">
+        <nav class="san-navbar">
             <div class="nav-wrapper container">
-                <span class="brand-logo">SanTour</span>
+                <span class="brand-logo san-logo">
+                    <img id="san-img-logo" src="<?php echo ABSURL; ?>/assets/img/logo.PNG"/>
+                    <img id="san-img-text" src="<?php echo ABSURL; ?>/assets/img/text.PNG"/>
+                </span>
                 <?php
                 if (isset($_SESSION['connected']) && $_SESSION['connected'])
                     echo '<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>';
                 ?>
-                <ul class="right hide-on-med-and-down">
+                <ul class="right hide-on-med-and-down san-list">
                     <?php
                     $ctr = $this->currentController;
 
@@ -81,11 +84,11 @@
 <main>
     <?php echo $html; ?>
 </main>
-<footer class="page-footer teal lighten-6">
+<footer class="page-footer san-footer">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text"><?php __('Who are we ?') ?></h5>
+                <h5 class="grey-text text-lighten-4"><?php __('Who are we ?') ?></h5>
                 <p class="grey-text text-lighten-4">
                     <?php __('We are five students from the HES-SO in Sierre. As part of our project course, we are asked to make a mobile application for SanTour, a company that harvests course data made by its trackers. The administration part of the application is managed from this web platform.') ?>
                 </p>
@@ -96,21 +99,21 @@
             else
                 echo '<div class="col l3 offset-l3 s12">';
             ?>
-            <h5 class="white-text"><?php __("Languages"); ?></h5>
+            <h5 class="grey-text text-lighten-4"><?php __("Languages"); ?></h5>
             <ul>
                 <?php
                 if ($_SESSION['lang'] == 'de')
                     echo '<li class="san-disabled">' . __("German", true) . '</li>';
                 else
-                    echo '<li><a class="white-text" href="' . ABSURL . '/language?lang=de">' . __("German", true) . '</a></li>';
+                    echo '<li><a class="grey-text text-lighten-4" href="' . ABSURL . '/language?lang=de">' . __("German", true) . '</a></li>';
                 if ($_SESSION['lang'] == 'en')
                     echo '<li class="san-disabled">' . __("English", true) . '</li>';
                 else
-                    echo '<li><a class="white-text" href="' . ABSURL . '/language?lang=en">' . __("English", true) . '</a></li>';
+                    echo '<li><a class="grey-text text-lighten-4" href="' . ABSURL . '/language?lang=en">' . __("English", true) . '</a></li>';
                 if ($_SESSION['lang'] == 'fr')
                     echo '<li class="san-disabled">' . __("French", true) . '</li>';
                 else
-                    echo '<li><a class="white-text" href="' . ABSURL . '/language?lang=fr">' . __("French", true) . '</a></li>';
+                    echo '<li><a class="grey-text text-lighten-4" href="' . ABSURL . '/language?lang=fr">' . __("French", true) . '</a></li>';
                 ?>
             </ul>
         </div>
@@ -118,23 +121,23 @@
         if (isset($_SESSION['connected']) && $_SESSION['connected']) {
             echo '
                             <div class="col l3 s12">
-                                <h5 class="white-text">' . __("Navigation", true) . '</h5>
+                                <h5 class="grey-text text-lighten-4">' . __("Navigation", true) . '</h5>
                                 <ul>';
             if ($ctr == 'tracks')
                 echo '<li class="san-disabled">' . __("Tracks", true) . '</li>';
             else
-                echo '<li><a class="white-text" href="' . ABSURL . DS . 'tracks">' . __("Tracks", true) . '</a></li>';
+                echo '<li><a class="grey-text text-lighten-4" href="' . ABSURL . DS . 'tracks">' . __("Tracks", true) . '</a></li>';
 
             if ($ctr == 'categories')
                 echo '<li class="san-disabled">' . __("Categories", true) . '</li>';
             else
-                echo '<li><a class="white-text" href="' . ABSURL . DS . 'categories">' . __("Categories", true) . '</a></li>';
+                echo '<li><a class="grey-text text-lighten-4" href="' . ABSURL . DS . 'categories">' . __("Categories", true) . '</a></li>';
 
             if ($ctr == 'users')
                 echo '<li class="san-disabled">' . __("Users", true) . '</li>';
             else
-                echo '<li><a class="white-text" href="' . ABSURL . DS . 'users">' . __("Users", true) . '</a></li>';
-            echo '<li><a class="white-text" href="' . ABSURL . DS . 'login' . DS . 'logout">' . __("Logout", true) . '</a></li>
+                echo '<li><a class="grey-text text-lighten-4" href="' . ABSURL . DS . 'users">' . __("Users", true) . '</a></li>';
+            echo '<li><a class="grey-text text-lighten-4" href="' . ABSURL . DS . 'login' . DS . 'logout">' . __("Logout", true) . '</a></li>
                 </ul>
             </div>';
         }

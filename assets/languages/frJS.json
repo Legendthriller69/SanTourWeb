@@ -1,3 +1,7 @@
 {
-  "Cancel password change": "Annuler le changement de mot de passe"
+  "Cancel password change": "Annuler le changement de mot de passe",
+  "Start": "Départ",
+  "End": "Arrivée",
+  "POD": "POD",
+  "POI": "POI"
 }

@@ -22,16 +22,19 @@ main {
 
 .san-btn:hover {
     color: white;
+    background-color: rgba(251, 72, 76, 0.9);
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
 }
 
 .san-btn:active {
     color: white;
+    background-color: rgba(251, 72, 76, 0.9);
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
 }
 
 .san-btn:focus {
     color: white;
+    background-color: rgba(251, 72, 76, 0.9);
     box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.14);
 }
 
@@ -41,7 +44,7 @@ main {
 }
 
 .san-table > tbody > tr:nth-child(even) {
-    background-color: rgba(38, 166, 154, 0.05) !important;
+    background-color: rgba(255, 0, 0, 0.01) !important;
 }
 
 #san-table-category td {
@@ -76,7 +79,7 @@ h5 {
     width: 50%;
 }
 
-#rsan-about {
+#san-about {
     margin-bottom: 40px;
 }
 
@@ -135,7 +138,7 @@ h5 {
 }
 
 .san-disabled {
-    color: #cccccc;
+    color: #aaaaaa;
 }
 
 .san-disabled a {
@@ -194,23 +197,67 @@ h5 {
 }
 
 .san-side-nav li > a:hover {
-    background-color: rgba(38, 166, 154, 0.25);
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 0.8);
 }
 
 .san-side-nav li > a:focus {
-    background-color: rgba(38, 166, 154, 0.25);
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 0.8);
 }
 
 .san-side-nav li > a:active {
-    background-color: rgba(38, 166, 154, 0.5);
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 0.9);
 }
 
-.san-side-nav .nav-active {
-    background-color: rgba(38, 166, 154, 0.75);
+.san-side-nav .active {
+    background-color: rgba(251, 72, 76, 1) !important;
 }
 
-.san-side-nav .nav-active a {
-    color: white;
+.san-side-nav .active a {
+    background-color: rgba(251, 72, 76, 1) !important;
+    color: #f5f5f5 !important;
+}
+
+.san-list li a {
+    background-color: white;
+    color: black;
+}
+
+.san-list .active a {
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 1);
+}
+
+.san-list .active a:hover {
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 1);
+}
+
+.san-list .active a:focus {
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 1);
+}
+
+.san-list .active a:active {
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 1);
+}
+
+.san-list li > a:hover {
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 0.8);
+}
+
+.san-list li > a:focus {
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 0.8);
+}
+
+.san-list li > a:active {
+    color: #f5f5f5;
+    background-color: rgba(251, 72, 76, 0.9);
 }
 
 .san-form {
@@ -227,7 +274,7 @@ h5 {
 }
 
 .san-tabs .indicator {
-    background-color: #009688;
+    background-color: #fb484c;
 }
 
 .san-row-tracks-info {
@@ -274,4 +321,36 @@ h5 {
     height: 40px;
 }
 
+.san-logo #san-img-logo {
+    height: 64px;
+}
 
+.san-logo #san-img-text {
+    width: 50%;
+    vertical-align: 25%;
+}
+
+.san-navbar {
+    background-color: white !important;
+    box-shadow: 0 2px 2px 0 rgba(251, 72, 76, 0.2), 0 1px 5px 0 rgba(251, 72, 76, 0.22), 0 3px 1px -2px rgba(251, 72, 76, 0.4);
+}
+
+.san-navbar a {
+    color: #fb484c;
+}
+
+.san-footer {
+    background-color: #fb484c !important;
+}
+
+input:not(.invalid):focus {
+    border-bottom: 1px solid #c7cdc4 !important;
+}
+
+input:focus + label {
+    color: #fb484c !important;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: rgba(210, 31, 35, 1);
+}
