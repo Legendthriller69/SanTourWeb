@@ -13,8 +13,7 @@
                     <label class="active" for="password"><?php __('Password') ?></label>
                 </div>
             </div>
-                <button type="submit" name="submit" class="waves-effect waves-light btn btn-large resa-btn">
-                    <!--<i class="material-icons right">send</i>-->
+                <button type="submit" name="submit" class="waves-effect waves-light btn btn-large san-btn">
                     <?php __('Enter') ?>
                 </button>
             </div>

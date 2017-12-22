@@ -59,7 +59,7 @@ class ControllerUsers extends Controller
             if ($_POST['changePass'] == 'true') {
                 if ($_POST['password'] != $_POST['passwordConf']) {
                     $error = true;
-                    $html .= __('The password confirmation does not match !', true) . '<br />';
+                    $html .= __('The password and its confirmation have to match !', true) . '<br />';
                 }
 
                 // Checks if the length of the password is at least of 6 characters

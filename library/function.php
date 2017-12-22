@@ -4,7 +4,10 @@ use SanTourWeb\Library\Utils\Redirect;
 
 function error_404()
 {
-    return '404 ça marche pas';
+    if (isset($_SESSION['connected']))
+        Redirect::toAction('tracks');
+    else
+        Redirect::toAction('index');
 }
 
 function redirectIfNotConnected()

@@ -67,8 +67,9 @@ class ControllerTracks extends Controller
 
         $firebase = FirebaseLib::getInstance();
         $trackJSON = $firebase->get('tracks/' . $_GET['id']);
+        $track = json_decode($trackJSON);
 
-        header('Content-disposition: attachment; filename="essai.json"');
+        header('Content-disposition: attachment; filename="' . $track->name . '.json"');
         header('Content-type: application/json');
         echo $trackJSON;
     }
