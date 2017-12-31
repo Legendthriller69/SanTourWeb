@@ -67,5 +67,7 @@
   "The length of the password must be at least of 6 characters !": "La longueur du mot de passe doit être d'au moins 6 caractères !",
   "Edit the user": "Modifier l'utilisateur",
   "Change the password": "Changer de mot de passe",
-  "The e-mail address or the password are incorrect !": "L'adresse e-mail ou le mot de passe sont incorrects !"
+  "The e-mail address or the password are incorrect !": "L'adresse e-mail ou le mot de passe sont incorrects !",
+  "No POD for this track": "Aucun POD pour ce parcours",
+  "No POI for this track": "Aucun POI pour ce parcours"
 }

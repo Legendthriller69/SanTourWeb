@@ -47,7 +47,7 @@
                 <td>' . $types[$i]->getName() . '</td>
                 <td>' . $users[$i]->getUsername() . '</td>
                 <td>' . round_distance($track->getDistance()) . '</td>
-                <td>' . $track->getDuration() . ' ' . __('seconds', true) . '</td>
+                <td>' . setTime($track->getDuration()) . '</td>
                 <td>' . $actions . '</td>
             </tr>';
 
@@ -61,9 +61,28 @@
     </table>
 </div>
 <?php
-function round_distance($distance) {
+function round_distance($distance)
+{
     if ($distance >= 1000)
         return round($distance / 1000, 2) . ' km';
     else
         return round($distance, 2) . ' m';
+}
+
+function setTime($time)
+{
+    $hours = intval($time / 3600);
+    $minutes = intval(($time % 3600) / 60);
+    $seconds = intval(($time % 3600) % 60);
+
+    if ($hours < 10)
+        $hours = '0' . $hours;
+
+    if ($minutes < 10)
+        $minutes = '0' . $minutes;
+
+    if ($seconds < 10)
+        $seconds = '0' . $seconds;
+
+    return $hours . ':' . $minutes . ':' . $seconds;
 }

@@ -13,6 +13,7 @@ define('LIBPATH', realpath(ROOT.DS.'library'));
 define('ASSETSPATH', realpath(ROOT.DS.'assets'));
 
 define('ABSURL', 'http://localhost/SanTourWeb');
+//define('ABSURL', 'http://vlhprj645-1.hevs.ch/grp21');
 
 define('DEBUG_LEVEL', 2);
 

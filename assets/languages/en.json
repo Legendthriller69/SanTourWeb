@@ -67,5 +67,7 @@
   "The length of the password must be at least of 6 characters !": "The length of the password must be at least of 6 characters !",
   "Edit the user": "Edit the user",
   "Change the password": "Change the password",
-  "The e-mail address or the password are incorrect !": "The e-mail address or the password are incorrect !"
+  "The e-mail address or the password are incorrect !": "The e-mail address or the password are incorrect !",
+  "No POD for this track": "No POD for this track",
+  "No POI for this track": "No POI for this track"
 }

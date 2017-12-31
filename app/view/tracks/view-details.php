@@ -30,7 +30,7 @@
                               <span>' . __("Distance", true) . ' :</span> ' . round_distance($track->getDistance()) . '
                           </div>
                           <div class="col s12 m6 l3 san-row-tracks-info">
-                               <span>' . __("Duration", true) . ' :</span> ' . '10' . ' ' . __('minutes', true) . '
+                               <span>' . __("Duration", true) . ' :</span> ' . setTime($track->getDuration()) . '
                           </div>
                          <div class="col s12 m6 l3 san-row-tracks-info">
                               <span>' . __("Description", true) . ' :</span> ' . $track->getDescription() . '
@@ -325,4 +325,22 @@ function round_distance($distance)
         return round($distance / 1000, 2) . ' km';
     else
         return round($distance, 2) . ' m';
+}
+
+function setTime($time)
+{
+    $hours = intval($time / 3600);
+    $minutes = intval(($time % 3600) / 60);
+    $seconds = intval(($time % 3600) % 60);
+
+    if ($hours < 10)
+        $hours = '0' . $hours;
+
+    if ($minutes < 10)
+        $minutes = '0' . $minutes;
+
+    if ($seconds < 10)
+        $seconds = '0' . $seconds;
+
+    return $hours . ':' . $minutes . ':' . $seconds;
 }
