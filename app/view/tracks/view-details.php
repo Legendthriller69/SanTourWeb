@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col s12">
                             <ul id="tabs-swipe-demo" class="tabs san-tabs">
-                                <li class="tab col s6"><a class="active"  href="#swipe-pod">' . __('Points of danger', true) . '</a></li>
+                                <li class="tab col s6"><a class="active"  href="#swipe-pod">' . __('Points of difficulty', true) . '</a></li>
                                 <li class="tab col s6"><a href="#swipe-poi">' . __('Points of interest', true) . '</a></li>
                             </ul>
                             <div id="swipe-pod" class="col s12 san-swipe">
