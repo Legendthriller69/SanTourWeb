@@ -2,6 +2,10 @@
 
 namespace SanTourWeb\Library\Entity;
 
+/**
+ * Class Position
+ * @package SanTourWeb\Library\Entity
+ */
 class Position {
     private $latitude;
     private $longitude;

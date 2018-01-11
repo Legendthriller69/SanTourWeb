@@ -2,6 +2,10 @@
 
 namespace SanTourWeb\Library\Entity;
 
+/**
+ * Class Role
+ * @package SanTourWeb\Library\Entity
+ */
 class Role
 {
     private $id;

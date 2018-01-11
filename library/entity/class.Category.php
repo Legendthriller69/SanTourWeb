@@ -2,6 +2,10 @@
 
 namespace SanTourWeb\Library\Entity;
 
+/**
+ * Class Category
+ * @package SanTourWeb\Library\Entity
+ */
 class Category
 {
     private $id;

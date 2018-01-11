@@ -2,6 +2,10 @@
 
 namespace SanTourWeb\Library\Entity;
 
+/**
+ * Class Track
+ * @package SanTourWeb\Library\Entity
+ */
 class Track {
     private $id;
     private $idType;

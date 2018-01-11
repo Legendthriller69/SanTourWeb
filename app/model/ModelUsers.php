@@ -9,6 +9,10 @@ use SanTourWeb\Library\Entity\Role;
 
 class ModelUsers extends Model
 {
+    /**
+     * Method used to get the list of users
+     * @return mixed List of users
+     */
     public function getUsers()
     {
         $firebase = Firebase::getInstance();
@@ -25,6 +29,10 @@ class ModelUsers extends Model
         return $this->compareUsers($users);
     }
 
+    /**
+     * Method used to get the role for each user
+     * @return array List of roles
+     */
     public function getUsersRoles()
     {
         $firebase = Firebase::getInstance();
@@ -42,6 +50,11 @@ class ModelUsers extends Model
         return $roles;
     }
 
+    /**
+     * Method used to get a user by its id
+     * @param $id Id of the user
+     * @return User Recovered user
+     */
     public function getUserById($id)
     {
         $firebase = Firebase::getInstance();
@@ -51,6 +64,10 @@ class ModelUsers extends Model
         return new User($id, $userDB['idRole'], $userDB['username'], $userDB['mail']);
     }
 
+    /**
+     * Method used to get the list of roles
+     * @return mixed List of roles
+     */
     public function getRoles()
     {
         $firebase = Firebase::getInstance();
@@ -67,6 +84,11 @@ class ModelUsers extends Model
         return $this->compareRoles($roles);
     }
 
+    /**
+     * Method used to sort the roles by alphabetical order
+     * @param $roles List of roles
+     * @return mixed List of roles sorted
+     */
     private function compareRoles($roles) {
         usort($roles, function ($a, $b) {
             return strcmp($a->getName(), $b->getName());
@@ -75,6 +97,11 @@ class ModelUsers extends Model
         return $roles;
     }
 
+    /**
+     * Method used to sort the users by alphabetical order
+     * @param $users List of users
+     * @return mixed List of users sorted
+     */
     private function compareUsers($users) {
         usort($users, function ($a, $b) {
             return strcmp($a->getUsername(), $b->getUsername());
@@ -83,6 +110,13 @@ class ModelUsers extends Model
         return $users;
     }
 
+    /**
+     * Method used to add a new user
+     * @param $idRole Id of the user's role
+     * @param $username Username of the user
+     * @param $password Password of the user
+     * @param $mail E-mail of the user
+     */
     public function addUser($idRole, $username, $password, $mail)
     {
         $firebase = Firebase::getInstance();
@@ -104,6 +138,14 @@ class ModelUsers extends Model
         $database->getReference('users/' . $UID)->set($user);
     }
 
+    /**
+     * Method used to update a user
+     * @param $id Id of the user
+     * @param $idRole New role of the user
+     * @param $username New username of the user
+     * @param $password New password of the user
+     * @param $mail New e-mail address of the user
+     */
     public function updateUser($id, $idRole, $username, $password, $mail)
     {
         $firebase = Firebase::getInstance();
@@ -130,6 +172,10 @@ class ModelUsers extends Model
         $database->getReference('users/' . $id)->set($user);
     }
 
+    /**
+     * Method used to delete a user
+     * @param $id Id of the user
+     */
     public function deleteUser($id)
     {
         // Firebase deleting
@@ -143,6 +189,13 @@ class ModelUsers extends Model
         $database->getReference('users/' . $id)->remove();
     }
 
+    /**
+     * Method used to check if a user (its username, e-mail address or id) already exists
+     * @param $username Username of the user
+     * @param $mail E-mail E-mail address of the user
+     * @param int $id Id of the user
+     * @return bool True if exists, False if not.
+     */
     public function existsUser($username, $mail, $id = 0)
     {
         $users = $this->getUsers();

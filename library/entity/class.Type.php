@@ -2,6 +2,10 @@
 
 namespace SanTourWeb\Library\Entity;
 
+/**
+ * Class Type
+ * @package SanTourWeb\Library\Entity
+ */
 class Type {
     private $id;
     private $name;

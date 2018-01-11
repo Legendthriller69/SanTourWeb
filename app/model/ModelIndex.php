@@ -12,6 +12,10 @@ use SanTourWeb\Library\Utils\Toast;
 
 class ModelIndex extends Model
 {
+    /**
+     * Method used to get the list of users
+     * @return array The list of users
+     */
     public function getUsers()
     {
         $firebase = Firebase::getInstance();
@@ -28,6 +32,12 @@ class ModelIndex extends Model
         return $users;
     }
 
+    /**
+     * Method used to connect the user with firebase
+     * @param $mail Mail address of the user
+     * @param $password Password of the user
+     * @return bool|User If true, returns the user. If false, returns false
+     */
     public function connectUser($mail, $password)
     {
         $firebase = Firebase::getInstance();
@@ -43,6 +53,11 @@ class ModelIndex extends Model
         }
     }
 
+    /**
+     * Method used to get one user by his id
+     * @param $id Id of the user
+     * @return User Recovered user
+     */
     public function getUserById($id)
     {
         $firebase = Firebase::getInstance();
@@ -55,6 +70,11 @@ class ModelIndex extends Model
         }
     }
 
+    /**
+     * Method used to get one role by its id
+     * @param $id Id of the user
+     * @return Role Recovered role
+     */
     public function getRoleById($id)
     {
         $firebase = Firebase::getInstance();

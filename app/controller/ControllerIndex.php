@@ -11,6 +11,10 @@ use SanTourWeb\Library\Utils\Redirect;
 
 class ControllerIndex extends Controller
 {
+    /**
+     * Login page
+     * @return mixed
+     */
     public function index()
     {
         if (isset($_SESSION['connected']) && $_SESSION['connected'])
@@ -31,11 +35,9 @@ class ControllerIndex extends Controller
         }
     }
 
-    public function example()
-    {
-        return $this->view->Render();
-    }
-
+    /**
+     * Logout action
+     */
     public function logout()
     {
         redirectIfNotConnected();

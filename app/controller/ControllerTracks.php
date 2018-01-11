@@ -9,6 +9,11 @@ use SanTourWeb\Library\Utils\Redirect;
 
 class ControllerTracks extends Controller
 {
+    /**
+     * Homepage of the tracks section
+     * Displays the list of tracks
+     * @return mixed
+     */
     public function index()
     {
         redirectIfNotConnected();
@@ -24,6 +29,10 @@ class ControllerTracks extends Controller
         return $this->view->Render();
     }
 
+    /**
+     * Details of a track
+     * @return mixed
+     */
     public function details()
     {
         redirectIfNotConnected();
@@ -44,6 +53,10 @@ class ControllerTracks extends Controller
         return $this->view->Render();
     }
 
+    /**
+     * Action used to delete a track
+     * @return mixed
+     */
     public function delete()
     {
         redirectIfNotConnected();
@@ -51,13 +64,14 @@ class ControllerTracks extends Controller
         if (isset($_GET['id']) && !empty($_GET['id'])) {
             $this->model->deleteTrack($_GET['id']);
             Toast::message(__('Track successfully deleted !', true), 'green');
-            Redirect::toAction('tracks');
-        } else
-            Toast::message(__('Suppression failed !', true), 'red');
+        }
 
-        return $this->view->Render();
+        Redirect::toAction('tracks');
     }
 
+    /**
+     * Action used to export a track
+     */
     public function export()
     {
         redirectIfNotConnected();

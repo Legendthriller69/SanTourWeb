@@ -2,6 +2,10 @@
 
 namespace SanTourWeb\Library\Entity;
 
+/**
+ * Class Poi
+ * @package SanTourWeb\Library\Entity
+ */
 class Poi {
     private $name;
     private $description;

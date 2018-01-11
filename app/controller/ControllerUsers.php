@@ -8,6 +8,10 @@ use SanTourWeb\Library\Utils\Toast;
 
 class ControllerUsers extends Controller
 {
+    /**
+     * Homepage of the users section
+     * Contains the list of users and a button to add others
+     */
     public function index()
     {
         redirectIfNotConnected();
@@ -19,6 +23,10 @@ class ControllerUsers extends Controller
         return $this->view->Render();
     }
 
+    /**
+     * Action used to add users
+     * @return mixed
+     */
     public function add()
     {
         redirectIfNotConnected();
@@ -44,6 +52,10 @@ class ControllerUsers extends Controller
         return $this->view->Render();
     }
 
+    /**
+     * Action used to edit a user
+     * @return mixed
+     */
     public function edit()
     {
         redirectIfNotConnected();
@@ -93,6 +105,9 @@ class ControllerUsers extends Controller
         return $this->view->Render();
     }
 
+    /**
+     * Action used to delete a user
+     */
     public function delete()
     {
         redirectIfNotConnected();

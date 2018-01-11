@@ -15,6 +15,10 @@ use SanTourWeb\Library\Mvc\Model;
 
 class ModelTracks extends Model
 {
+    /**
+     * Method used to get the list of the tracks
+     * @return mixed List of tracks
+     */
     public function getTracks()
     {
         $firebase = FirebaseLib::getInstance();
@@ -30,6 +34,10 @@ class ModelTracks extends Model
         return $this->compareTracks($tracks);
     }
 
+    /**
+     * Method used to get the information about the user of each track
+     * @return array List of users
+     */
     public function getTracksUsers()
     {
         $firebase = FirebaseLib::getInstance();
@@ -45,6 +53,10 @@ class ModelTracks extends Model
         return $users;
     }
 
+    /**
+     * Method used to get the information about the type of each track
+     * @return array List of types
+     */
     public function getTracksTypes()
     {
         $firebase = FirebaseLib::getInstance();
@@ -60,6 +72,11 @@ class ModelTracks extends Model
         return $types;
     }
 
+    /**
+     * Method used to get the information about the category of each track
+     * @param $id
+     * @return array
+     */
     public function getTracksCategories($id)
     {
         $firebase = FirebaseLib::getInstance();
@@ -78,6 +95,11 @@ class ModelTracks extends Model
         return $categories;
     }
 
+    /**
+     * Method used to sort the tracks by its distance
+     * @param $tracks List of tracks
+     * @return mixed The list of tracks sorted
+     */
     private function compareTracks($tracks)
     {
         usort($tracks, function ($a, $b) {
@@ -87,6 +109,11 @@ class ModelTracks extends Model
         return $tracks;
     }
 
+    /**
+     * Method used to get a track by its id
+     * @param $id Id of the track
+     * @return Track Recovered track
+     */
     public function getTrackById($id)
     {
         $firebase = FirebaseLib::getInstance();
@@ -129,6 +156,11 @@ class ModelTracks extends Model
         return $track;
     }
 
+    /**
+     * Method used to get a category by its id
+     * @param $id id of the category
+     * @return Category Recovered category
+     */
     public function getCategoryById($id)
     {
         $firebase = FirebaseLib::getInstance();
@@ -137,6 +169,11 @@ class ModelTracks extends Model
         return new Category($id, $categoryDB->name);
     }
 
+    /**
+     * Method used to get a user by its id
+     * @param $id id of the user
+     * @return User Recovered user
+     */
     public function getUserById($id)
     {
         $firebase = FirebaseLib::getInstance();
@@ -145,6 +182,11 @@ class ModelTracks extends Model
         return new User($id, $userDB->idRole, $userDB->username, $userDB->mail);
     }
 
+    /**
+     * Method used to get a type by its id
+     * @param $id id of the type
+     * @return Type Recovered type
+     */
     public function getTypeById($id)
     {
         $firebase = FirebaseLib::getInstance();
@@ -153,6 +195,10 @@ class ModelTracks extends Model
         return new Type($id, $typeDB->name);
     }
 
+    /**
+     * Method used to delete a track
+     * @param $id Id of the track
+     */
     public function deleteTrack($id)
     {
         $firebase = FirebaseLib::getInstance();

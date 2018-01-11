@@ -2,6 +2,10 @@
 
 namespace SanTourWeb\Library\Entity;
 
+/**
+ * Class PodCategory
+ * @package SanTourWeb\Library\Entity
+ */
 class PodCategory {
     private $idCategory;
     private $value;

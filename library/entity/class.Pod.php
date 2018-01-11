@@ -2,6 +2,10 @@
 
 namespace SanTourWeb\Library\Entity;
 
+/**
+ * Class Pod
+ * @package SanTourWeb\Library\Entity
+ */
 class Pod {
     private $name;
     private $description;

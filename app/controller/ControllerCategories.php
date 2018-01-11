@@ -8,6 +8,13 @@ use SanTourWeb\Library\Utils\Redirect;
 
 class ControllerCategories extends Controller
 {
+    /**
+     * Homepage of the categories section
+     * Contains
+     *  - the list of categories
+     *  - a form to add a new category
+     * @return mixed
+     */
     public function index()
     {
         redirectIfNotConnected();
@@ -33,6 +40,10 @@ class ControllerCategories extends Controller
         return $this->view->Render();
     }
 
+    /**
+     * Action used to delete a category
+     * @return mixed
+     */
     public function delete()
     {
         redirectIfNotConnected();
@@ -40,10 +51,8 @@ class ControllerCategories extends Controller
         if (isset($_GET['id']) && !empty($_GET['id'])) {
             $this->model->deleteCategory($_GET['id']);
             Toast::message(__('Category successfully deleted !', true), 'green');
-            Redirect::toAction('categories');
-        } else
-            Toast::message(__('Suppression failed !', true), 'red');
+        }
 
-        return $this->view->Render();
+        Redirect::toAction('categories');
     }
 }
