@@ -260,13 +260,13 @@
                 lng: <?php echo $track->getPositions()[count($track->getPositions()) - 1]->getLongitude(); ?>},
             map: map,
             title: __('End'),
-            icon: pinSymbol("#CCC")
+            icon: pinSymbol("#AD00FF")
         });
 
         // Légende des marqueurs
         var types = [
             {name: __('Start'), icon: ABSURL + '/assets/img/green_square.png'},
-            {name: __('End'), icon: ABSURL + '/assets/img/grey_square.png'},
+            {name: __('End'), icon: ABSURL + '/assets/img/purple_square.png'},
             {name: __('POD'), icon: ABSURL + '/assets/img/red_square.png'},
             {name: __('POI'), icon: ABSURL + '/assets/img/blue_square.png'}
         ];

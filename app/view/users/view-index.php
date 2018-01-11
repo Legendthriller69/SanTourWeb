@@ -2,7 +2,7 @@
     <div class="san-title">
         <h5><?php __("List of users"); ?></h5>
         <a class="waves-effect waves-light btn btn-large san-btn san-btn-title"
-           href="<?php echo ABSURL; ?>/users/add"><?php __("Add an user"); ?></a>
+           href="<?php echo ABSURL; ?>/users/add"><?php __("Add a user"); ?></a>
     </div>
     <table class="san-table striped">
         <thead>

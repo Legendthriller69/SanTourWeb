@@ -33,12 +33,12 @@ class ModelTracks extends Model
     public function getTracksUsers()
     {
         $firebase = FirebaseLib::getInstance();
-        $tracksDB = json_decode($firebase->get('tracks'));
+        $tracks = $this->getTracks();
 
         $users = array();
-        foreach ($tracksDB as $trackDB) {
-            $tempUser = json_decode($firebase->get('users/' . $trackDB->idUser));
-            $user = new User($trackDB->idUser, $tempUser->idRole, $tempUser->username, $tempUser->mail);
+        foreach ($tracks as $track) {
+            $tempUser = json_decode($firebase->get('users/' . $track->getIdUser()));
+            $user = new User($track->getIdUser(), $tempUser->idRole, $tempUser->username, $tempUser->mail);
             array_push($users, $user);
         }
 
@@ -48,12 +48,12 @@ class ModelTracks extends Model
     public function getTracksTypes()
     {
         $firebase = FirebaseLib::getInstance();
-        $tracksDB = json_decode($firebase->get('tracks'));
+        $tracks = $this->getTracks();
 
         $types = array();
-        foreach ($tracksDB as $trackDB) {
-            $tempType = json_decode($firebase->get('types/' . $trackDB->idType));
-            $type = new Type($trackDB->idType, $tempType->name);
+        foreach ($tracks as $track) {
+            $tempType = json_decode($firebase->get('types/' . $track->getIdType()));
+            $type = new Type($track->getIdType(), $tempType->name);
             array_push($types, $type);
         }
 

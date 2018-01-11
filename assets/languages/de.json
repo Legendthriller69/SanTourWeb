@@ -9,7 +9,7 @@
   "English": "Englisch",
   "French": "Französisch",
   "List of users": "Liste der Benutzer",
-  "Add an user": "Fügen Sie einen Benutzer hinzu",
+  "Add a user": "Fügen Sie einen Benutzer hinzu",
   "Name": "Name",
   "Role": "Rolle",
   "Mail address": "E-Mail Adresse",
@@ -69,5 +69,6 @@
   "Change the password": "Passwort ändern",
   "The e-mail address or the password are incorrect !": "Die E-Mail-Adresse oder das Passwort sind falsch !",
   "No POD for this track": "Kein POD für diesen Kurs",
-  "No POI for this track": "Kein POI für diesen Kurs"
+  "No POI for this track": "Kein POI für diesen Kurs",
+  "Track successfully deleted !": "Kurs wurde erfolgreich gelöscht !"
 }

@@ -9,7 +9,7 @@
   "English": "English",
   "French": "French",
   "List of users": "List of users",
-  "Add an user": "Add an user",
+  "Add a user": "Add a user",
   "Name": "Name",
   "Role": "Role",
   "Mail address": "Mail address",
@@ -69,5 +69,6 @@
   "Change the password": "Change the password",
   "The e-mail address or the password are incorrect !": "The e-mail address or the password are incorrect !",
   "No POD for this track": "No POD for this track",
-  "No POI for this track": "No POI for this track"
+  "No POI for this track": "No POI for this track",
+  "Track successfully deleted !": "Track successfully deleted !"
 }
